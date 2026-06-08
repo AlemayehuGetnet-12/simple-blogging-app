@@ -1,20 +1,22 @@
 import "./globals.css";
-// import { BlogProvider } from "./context/BlogContext";
-import Navbar from "./components/Navbar";
+import { ReactNode } from "react";
+
+import Navbar from "../components/Navbar";
+import { BlogProvider } from "./providers";
 
 export const metadata = {
   title: "Blog App",
   description: "Simple Blogging App",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {/* <BlogProvider> */}
+        <BlogProvider>
           <Navbar />
           {children}
-        {/* </BlogProvider> */}
+        </BlogProvider>
       </body>
     </html>
   );
